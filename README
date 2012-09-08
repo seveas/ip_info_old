@@ -1,0 +1,8 @@
+ip_info
+=======
+
+Really simple django app thar provides you info about where you're connecting
+from. Similar to sites like whatismyip.com, but without all the clutter and
+crap.
+
+License: WTFPL
