@@ -28,7 +28,7 @@ def whois_host(request):
     try:
         ctx = {'what': psl.get_public_suffix(gethostbyaddr(request.META['REMOTE_ADDR'])[0])}
     except herror:
-        ctx = {'what': '(hostname unavailable)', data: "Hostname not found"}
+        ctx = {'what': '(hostname unavailable)', 'data': "Hostname not found"}
     else:
         ctx['data'] = shell.whois(ctx['what']).stdout
     return render_to_response('ip_info/whois.html', ctx)
