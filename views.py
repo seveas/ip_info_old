@@ -15,7 +15,7 @@ def main(request):
     if 'HTTP_X_FORWARDED_FOR' in request.META:
         ctx['local_ip'] = request.META['HTTP_X_FORWARDED_FOR']
     if 'HTTP_VIA' in request.META:
-        ctx['proxy'] = request.META['HTTP_VIA']
+        ctx['proxies'] = request.META['HTTP_VIA'].split(',')
     return render_to_response('ip_info/base.html', ctx)
  
 def whois_ip(request):

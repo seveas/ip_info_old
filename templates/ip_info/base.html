@@ -65,8 +65,8 @@
 <table>
   <tr><th>Your IP:</th><td><a href="./whois-ip/">{{ ip }}</a></td></tr>
   {% if hostname %}<tr><th>Your hostname:</th><td><a href="./whois-host/">{{ hostname }}</a></td></tr>{% endif %}
-  {% if proxy or local_ip %}
-  {% if proxy %}<tr><th>Proxy detected:</th><td>{{ proxy }}</td></tr>{% endif %}
+  {% if proxies or local_ip %}
+  {% if proxies %}<tr><th>Proxy detected:</th><td>{% for proxy in proxies %}{{ proxy }}</br>{% endfor %}</td></tr>{% endif %}
   {% if local_ip %}<tr><th>Your local IP:</th><td>{{ local_ip }}</td></tr>{% endif %}
   {% endif %}
 </table>
