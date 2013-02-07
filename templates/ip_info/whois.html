@@ -1,5 +1,6 @@
 {% extends "ip_info/base.html" %}
+{% load linkify %}
 {% block title %}Whois info for {{ what }}{% endblock %}
 {% block content %}
-<pre>{{ data }}</pre>
+<pre>{{ data|linkify }}</pre>
 {% endblock %}
