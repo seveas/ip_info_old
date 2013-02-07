@@ -9,6 +9,8 @@ Dependencies:
  * Django (pip install django / http://djangoproject.com)
  * whelk (pip install whelk / https://seveas.github.com/whelk)
  * publicsuffix (pip install publicsuffix / http://pypi.python.org/pypi/publicsuffix/ )
+ * geoip and a maxmind datafile are needed to display city/country info (optional)
+   to use this, set GEOIP_DATA in your settings.py to the path of the datafile
 
 This program is free software. It comes without any warranty, to the extent
 permitted by applicable law. You can redistribute it and/or modify it under the

@@ -64,6 +64,9 @@
 {% block content %}
 <table>
   <tr><th>Your IP:</th><td><a href="./whois-ip/">{{ ip }}</a></td></tr>
+  {% if geo %}
+  <tr><th>Location:</th><td>{% if geo.city %}{{ geo.city }}, {% endif %}{{ geo.country_name }}</td></tr>
+  {% endif %}
   {% if hostname %}<tr><th>Your hostname:</th><td><a href="./whois-host/">{{ hostname }}</a></td></tr>{% endif %}
   {% if proxies or local_ip %}
   {% if proxies %}<tr><th>Proxy detected:</th><td>{% for proxy in proxies %}{{ proxy }}</br>{% endfor %}</td></tr>{% endif %}
