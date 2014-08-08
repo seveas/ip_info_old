@@ -19,7 +19,7 @@ def main(request):
         pass
     if GeoIP:
         gi = GeoIP.open(settings.GEOIP_DATA, GeoIP.GEOIP_STANDARD)
-        geo = gi.record_by_addr(request.META['REMOTE_ADDR'])
+        geo = gi.record_by_addr(request.META['REMOTE_ADDR']) or {'country_name': 'Unknown'}
         for k in geo:
             if isinstance(geo[k], str):
                 geo[k] = geo[k].decode('iso-8859-1', 'replace')
